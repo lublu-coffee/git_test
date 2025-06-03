@@ -47,6 +47,16 @@ class Address:
         Address.count_id += 1
         self.Id = Address.count_id
 
+@dataclass
+class Film:
+    count_id = 0
+    Id: int = field(init=False)
+    Title: str
+    Description: str
+    Duration: int
+    Genres: list = field(default_factory=list)
+    Director: str
+
 
 h1 = Hall('A2', 20, 10)
 h2 = Hall('B4', 30, 15)
