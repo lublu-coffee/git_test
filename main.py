@@ -1,9 +1,20 @@
-def get_int_range():
-    n = int(input('Введите для второго цикла: '))
-    for v2 in range(n):
-        print(v2)
-    if input('Хотите продолжить ') == 'y':
-        get_int_range()
+from dataclasses import dataclass, field
 
 
-get_int_range()
+@dataclass
+class Cinema:
+    Id: int
+    Title: str
+    Address: str
+    CountHalls: int
+    Halls: field(default_factory=list)
+
+
+@dataclass
+class Hall:
+    Id: int
+    Title: str
+    Cinema: Cinema
+    Row: int
+    Seats: int
+
