@@ -55,7 +55,6 @@ class Film:
     Description: str
     Duration: int
     Genres: list = field(default_factory=list)
-    Director: str = ''
 
     def __post_init__(self):
         Film.count_id += 1
