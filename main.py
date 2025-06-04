@@ -69,6 +69,7 @@ class Director:
 
     def __post_init__(self):
         Director.count_id += 1
+        print('id режисера')
         self.Id = Director.count_id
 
 
