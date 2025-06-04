@@ -1,17 +1,16 @@
 from dataclasses import dataclass, field
+from add_id_class import add_id
 
 
 @dataclass
 class Cinema:
-    count_id = 0
     Id: int = field(init=False)
     Title: str
     Address: str = field(init=False, default='')
     Halls: list = field(default_factory=list)
 
     def __post_init__(self):
-        Cinema.count_id += 1
-        self.Id = Cinema.count_id
+        self.Id = add_id(self.__class__.__name__)
 
     def get_count_hall(self):
         return len(self.Halls)
@@ -20,36 +19,31 @@ class Cinema:
         for h in halls:
             self.Halls.append(h)
             
-    def get_address(self, adress):
-        self.Address = adress
+    def get_address(self, address):
+        self.Address = address
 
 
 @dataclass
 class Hall:
-    count_id = 0
     Id: int = field(init=False)
     Title: str
     Row: int = 0
     Seats: int = 0
 
     def __post_init__(self):
-        Hall.count_id += 1
-        self.Id = Hall.count_id
+        self.Id = add_id(self.__class__.__name__)
 
 
 @dataclass
 class Address:
-    count_id = 0
     Id: int = field(init=False)
     Title: str
 
     def __post_init__(self):
-        Address.count_id += 1
-        self.Id = Address.count_id
+        self.Id = add_id(self.__class__.__name__)
 
 @dataclass
 class Film:
-    count_id = 0
     Id: int = field(init=False)
     Title: str
     Description: str
@@ -57,9 +51,7 @@ class Film:
     Genres: list = field(default_factory=list)
 
     def __post_init__(self):
-        Film.count_id += 1
-        self.Id = Film.count_id
-
+        self.Id = add_id(self.__class__.__name__)
 
 
 
