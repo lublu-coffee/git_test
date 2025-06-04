@@ -62,15 +62,6 @@ class Film:
         self.Id = Film.count_id
 
 
-@dataclass
-class Director:
-    count_id = 0
-    Id: int = field(init=False)
-
-    def __post_init__(self):
-        Director.count_id += 1
-        print('id режисера')
-        self.Id = Director.count_id
 
 
 h1 = Hall('A2', 20, 10)
