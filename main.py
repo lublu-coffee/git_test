@@ -64,7 +64,6 @@ class Session:
         self.Id = add_id(self.__class__.__name__)
 
 
-
 if __name__ == '__main__':
     # Залы
     h1 = Hall('A2', 20, 10)
