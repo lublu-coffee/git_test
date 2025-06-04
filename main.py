@@ -55,7 +55,12 @@ class Film:
     Description: str
     Duration: int
     Genres: list = field(default_factory=list)
-    Director: str
+    Director: str = ''
+
+
+@dataclass
+class Director:
+    pass
 
 
 h1 = Hall('A2', 20, 10)
